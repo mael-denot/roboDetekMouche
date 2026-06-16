@@ -19,7 +19,7 @@ enum Command {
     Abeille,
     #[command(description = "On en parle plus que les gens ils peuvent manger les vers de terre")]
     VerDeTerre,
-    #[command(description = "Detek"]
+    #[command(description = "Detek")]
     Detek,
     #[command(description = "Ayamouche")]
     Ayamouche,
