@@ -29,6 +29,10 @@ enum Command {
     Ayamouche,
     #[command(description = "Les ordres de l'état")]
     OrdresDeLEtat,
+    #[command(description = "This is mind boggeling")]
+    Mind,
+    #[command(description = "Eskil a été mis au point un robo ki detek")]
+    Robot,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -56,6 +60,14 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         }
         Command::OrdresDeLEtat => {
             bot.send_message(msg.chat.id, format!("Vous 🫵 avez des ordres 🫡 de l'Etat 🇺🇸🦅🦅 bah 🙄 oui 🙂‍↕️")).await?
+        }
+        Command::Mind => {
+            let audio = InputFile.file("media/MindBoggling.m4a");
+            bot.sendAudio(msg.chat.id, audio).await?
+        }
+        Command::Robot => {
+            let audio = InputFile.file("media/robotDetekteur.mp3");
+            bot.sendAudio(msg.chat.id, audio).await?
         }
     };
 
