@@ -28,7 +28,7 @@ enum Command {
     #[command(description = "Ayamouche")]
     Ayamouche,
     #[command(description = "Les ordres de l'état")]
-    Ordres,
+    OrdresDeLEtat,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -54,7 +54,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         Command::Kadav => {
             bot.send_message(msg.chat.id, format!("💀 MOUCHE DETEKTED SUR LE KADAV")).await?
         }
-        Command::Ordres => {
+        Command::OrdresDeLEtat => {
             bot.send_message(msg.chat.id, format!("Vous 🫵 avez des ordres 🫡 de l'Etat 🇺🇸🦅🦅 bah 🙄 oui 🙂‍↕️")).await?
         }
     };
