@@ -33,6 +33,8 @@ enum Command {
     Mind,
     #[command(description = "Eskil a été mis au point un robo ki detek")]
     Robot,
+    #[command(description = "help me !!")]
+    Help,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -68,6 +70,9 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         Command::Robot => {
             let audio = InputFile::file("media/robotDetekteur.mp3");
             bot.send_audio(msg.chat.id, audio).await?
+        }
+        Command::Help => {
+            bot.send_message(msg.chat.id, format!("No. You go get help")).await?
         }
     };
 
