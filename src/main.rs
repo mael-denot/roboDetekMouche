@@ -63,11 +63,11 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         }
         Command::Mind => {
             let audio = InputFile.file("media/MindBoggling.m4a");
-            bot.sendAudio(msg.chat.id, audio).await?
+            bot.send_audio(msg.chat.id, audio).await?
         }
         Command::Robot => {
             let audio = InputFile.file("media/robotDetekteur.mp3");
-            bot.sendAudio(msg.chat.id, audio).await?
+            bot.send_audio(msg.chat.id, audio).await?
         }
     };
 
