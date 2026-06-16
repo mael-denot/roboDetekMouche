@@ -1,4 +1,4 @@
-use teloxide::{prelude::*, utils::command::BotCommands};
+use teloxide::{prelude::*, utils::command::BotCommands, types::*};
 
 #[tokio::main]
 async fn main() {
@@ -62,11 +62,11 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             bot.send_message(msg.chat.id, format!("Vous 🫵 avez des ordres 🫡 de l'Etat 🇺🇸🦅🦅 bah 🙄 oui 🙂‍↕️")).await?
         }
         Command::Mind => {
-            let audio = InputFile.file("media/MindBoggling.m4a");
+            let audio = InputFile::file("media/MindBoggling.m4a");
             bot.send_audio(msg.chat.id, audio).await?
         }
         Command::Robot => {
-            let audio = InputFile.file("media/robotDetekteur.mp3");
+            let audio = InputFile::file("media/robotDetekteur.mp3");
             bot.send_audio(msg.chat.id, audio).await?
         }
     };
