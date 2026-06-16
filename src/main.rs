@@ -21,6 +21,10 @@ enum Command {
     VerDeTerre,
     #[command(description = "Detek")]
     Detek,
+    #[command(description = "Pecticide sa contamine")]
+    Pecticide,
+    #[command(description = "kadav")]
+    Kadav,
     #[command(description = "Ayamouche")]
     Ayamouche,
 }
@@ -40,7 +44,13 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             bot.send_message(msg.chat.id, format!("😨 On n'en parle plus 🤫🤫 mais les gens 🧑‍🤝‍🧑 ils peuvent ⚡ manger les vers 🪱 de terre")).await?
         }
         Command::Ayamouche => {
-            bot.send_message(msg.chat.id, format!("😆"))
+            bot.send_message(msg.chat.id, format!("😆")).await?
+        }
+        Command::Pecticide => {
+            bot.send_message(msg.chat.id, format!("☢️ PECTICIDE DETEKTÉ SUR L'ABEILLE")).await?
+        }
+        Command::Kadav => {
+            bot.send_message(msg.chat.id, format!("💀 MOUCHE DETEKTED SUR LE KADAV")).await?
         }
     };
 
