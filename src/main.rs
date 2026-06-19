@@ -35,6 +35,8 @@ enum Command {
     Robot,
     #[command(description = "help me !!")]
     Help,
+    #[command(description = "philospoher")]
+    OnPourraitPhilosopher,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -73,6 +75,9 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         }
         Command::Help => {
             bot.send_message(msg.chat.id, format!("No. You go get help")).await?
+        }
+        Command::OnPourraitPhilosopher => {
+            bot.send_message(msg.chat.id, format!("on pourrait philosopher pendant très longtemps sur komment nous arrivent euhh certaines remarkes et euh notamment j'aurais une konception de la vie à voir, notamment et donc euh euh euhm komment dire, sur le, alors oui j’avais diskuté en fait euh, alors étant libriste euh libriste en ce moment, euh donc euh j’ai posé une kestion euhm euh euh euhm à une sane euhm, oui vive, vive henria, j’ai fait une remarke ils ont kréé un robo libre hein au libre, on dit didroam c’est pas de droit k’il faut dire effectivement, et donc euhh, j’ai eu komme réponse d’un chercheur euh, vive d’assos et donc euhh j’ai eu komme réponse euhh de l’élu euh dialektik k’on pourrait euh, ki lui, ki lui a demandé de venir euh là eskop le pavé voilà et donc euhh euhh, la kestion c’est par rapport à euh Louis XVI pouvez vous me parler de Turgot")).await?
         }
     };
 
