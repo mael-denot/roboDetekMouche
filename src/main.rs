@@ -39,8 +39,8 @@ enum Command {
     Help,
     #[command(description = "philospoher")]
     OnPourraitPhilosopher,
-    Fou,
     #[command(description = "J'ai été fou")]
+    Fou,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
