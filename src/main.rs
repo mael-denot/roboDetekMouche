@@ -87,7 +87,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             bot.send_message(msg.chat.id, format!("si les nuages étaient solides\nquelqu'un ferait du cross-country là-bas\net si j'étais liquide\nquelqu'un se laverait les mains\n\nla règle trente-quatre existe partout\npas seulement dans le sphère\nla nature crie les règles du jeu\non peut règler monsieur oui bien sûr\n\nil y a aussi des règles en écriture\ns'il y a un mot il y aura quelqu'un pour l'écrire\nle rendre solide et moi propre et nature\ncontente de son rire")).await?
         }
         Command::Fou => {
-            bot.send_message(msg.chat.id, format!("Fou? J'ai été fou une fois... Ils m'ont mis dans une pièce. Il y avait un jonas et un nathan dans la pièce. Ils m'ont parlé de mouches jusqu'à ce que je devienne fou. Fou? J'ai été fou une fois...")).await?
+            bot.send_message(msg.chat.id, format!("Fou? J'ai été fou une fois... Ils m'ont mis dans une pièce. Il y avait un jonas et un nathan dans la pièce. Ils m'ont parlé de mouches jusqu'à ce que je devienne fou. Fou? J'ai été /fou une fois...")).await?
         }
     };
 
