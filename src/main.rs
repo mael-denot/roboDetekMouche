@@ -41,6 +41,8 @@ enum Command {
     OnPourraitPhilosopher,
     #[command(description = "J'ai été fou")]
     Fou,
+    #[command(description = "/hmmm")]
+    Salim,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -88,6 +90,9 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         }
         Command::Fou => {
             bot.send_message(msg.chat.id, format!("Fou? J'ai été fou une fois... Ils m'ont mis dans une pièce. Il y avait un jonas et un nathan dans la pièce. Ils m'ont parlé de mouches jusqu'à ce que je devienne fou. Fou? J'ai été /fou une fois...")).await?
+        }
+        Command::Salim => {
+            bot.send_photo(msg.chat.id, InputFile::file("media/salim.jpg")).await?
         }
     };
 
