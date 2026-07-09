@@ -97,7 +97,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             bot.send_photo(msg.chat.id, InputFile::file("media/salim.jpg")).await?
         }
         Command::Gamble => {
-            bot.send_message(msg.chat.id, format!("🎰")).await?
+            bot.send_dice(msg.chat.id).await?
         }
     };
 
