@@ -45,6 +45,8 @@ enum Command {
     Salim,
     #[command(description = "gamble")]
     Gamble,
+    #[command(description = "tasty")]
+    PainDeKampagne,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -98,6 +100,9 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         }
         Command::Gamble => {
             bot.send_dice(msg.chat.id).await?
+        }
+        Command::PainDeKampagne => {
+            bot.send_sticker(msg.chat.id, InputFile::file("media/paindekampagne.webp")).await?
         }
     };
 
