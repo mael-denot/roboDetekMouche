@@ -43,6 +43,8 @@ enum Command {
     Fou,
     #[command(description = "/hmmm")]
     Salim,
+    #[command(description = "gamble")]
+    Gamble,
 }
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
@@ -93,6 +95,9 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
         }
         Command::Salim => {
             bot.send_photo(msg.chat.id, InputFile::file("media/salim.jpg")).await?
+        }
+        Command::Gamble => {
+            bot.send_message(msg.chat.id, format!("🎰")).await?
         }
     };
 
